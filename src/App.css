@@ -1,5 +1,32 @@
 .App {
+  font-family: sans-serif;
   text-align: center;
+  background-color: #263238;
+}
+
+h1 {
+  background: #d81921;
+  color: #fff;
+}
+
+div.error {
+  color: yellow;
+}
+
+.btn {
+  margin: 10px;
+}
+
+.fetch {
+  color: #fff;
+}
+
+.card {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 15px;
+  width: 50%;
 }
 
 .App-logo {
@@ -32,6 +59,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
