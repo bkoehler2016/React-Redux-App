@@ -1,16 +1,18 @@
 import React from "react";
-import { connect } from "react-redux";
+import { useSelector } from "react-redux";
 import { Card, CardBody } from "reactstrap";
 
 const SpellsList = props => {
+  const name = useSelector(state => state.spells);
+  const error = useSelector(state => state.error);
   return (
     <>
-      {props.error ? (
-        <div className="error">{props.error}</div>
+      {error ? (
+        <div className="error">{error}</div>
       ) : (
-        props.spells.map(spell => (
+        name.map(spells => (
           <Card>
-            <CardBody>{spell.spell}</CardBody>
+            <CardBody>{spells.name}</CardBody>
           </Card>
         ))
       )}
@@ -18,11 +20,4 @@ const SpellsList = props => {
   );
 };
 
-const mapStateToProps = state => {
-  return {
-    spells: state.spells,
-    error: state.error
-  };
-};
-
-export default connect(mapStateToProps, {})(SpellsList);
+export default SpellsList;

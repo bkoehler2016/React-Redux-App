@@ -7,10 +7,10 @@ export const SET_ERROR = "SET_ERROR";
 export const getData = () => dispatch => {
   dispatch({ type: FETCH_DATA });
   axios
-    .get("https://www.dnd5eapi.co/api/spells")
+    .get("https://www.dnd5eapi.co/api/spells/")
     .then(res => {
       console.log(res);
-      dispatch({ type: UPDATE_SPELLS, payload: res.data });
+      dispatch({ type: UPDATE_SPELLS, payload: res.data.results });
     })
     .catch(err => {
       console.log("error fetching data from api. err: ", err);
