@@ -1,13 +1,24 @@
 import React from "react";
-import axios from "axios";
 import "./App.css";
 
-function App() {
+import { createStore, applyMiddleware } from "redux";
+import { Provider } from "react-redux";
+import thunk from "redux-thunk";
+
+import SpellForm from "./components/SpellForm";
+import SpellsList from "./components/SpellsList";
+import { reducer } from "./reducers/spellsReducer";
+
+const store = createStore(reducer, applyMiddleware(thunk));
+
+export default function App() {
   return (
-    <div className="App">
-      <h1>React Redux</h1>
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        <h1>DnD 5th Edition Spells</h1>
+        <SpellForm />
+        <SpellsList />
+      </div>
+    </Provider>
   );
 }
-
-export default App;
