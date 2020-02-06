@@ -11,7 +11,11 @@ const SpellsList = props => {
         <div className="error">{error}</div>
       ) : (
         name.map(spells => (
-          <Card>
+          <Card
+            body
+            inverse
+            style={{ backgroundColor: "#333", borderColor: "#333" }}
+          >
             <CardBody>{spells.name}</CardBody>
           </Card>
         ))
