@@ -7,9 +7,9 @@ import thunk from "redux-thunk";
 
 import SpellForm from "./components/SpellForm";
 import SpellsList from "./components/SpellsList";
-import { spellsReducer } from "./reducers/spellsReducer";
+import { spellsReducer as reducer } from "./reducers/spellsReducer";
 
-const store = createStore(spellsReducer, applyMiddleware(thunk));
+const store = createStore(reducer, applyMiddleware(thunk));
 
 export default function App() {
   return (

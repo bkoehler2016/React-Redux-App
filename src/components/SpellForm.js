@@ -14,7 +14,7 @@ const SpellForm = props => {
       {props.isFetchingData ? (
         <div className="fetch">**we are fetching</div>
       ) : (
-        <Button color="primary" onClick={handleGetData}>
+        <Button color="danger" onClick={handleGetData}>
           get data
         </Button>
       )}
