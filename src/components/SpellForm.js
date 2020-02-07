@@ -15,7 +15,7 @@ const SpellForm = props => {
         <div className="fetch">**we are fetching</div>
       ) : (
         <Button color="danger" onClick={handleGetData}>
-          get data
+          Get Spells
         </Button>
       )}
     </>
